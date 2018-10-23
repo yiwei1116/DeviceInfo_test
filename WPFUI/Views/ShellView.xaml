@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFUI.Views"
         mc:Ignorable="d" FontSize="14"
         Title="系統資訊" Height="500" Width="500" WindowStartupLocation="CenterScreen">
-        <!--git-->
+        <!--gitt-->
         <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="15*"/>

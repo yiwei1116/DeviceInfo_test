@@ -1,0 +1,100 @@
+﻿<Window x:Class="WPFUI.Views.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFUI.Views"
+        mc:Ignorable="d" FontSize="14"
+        Title="系統資訊" Height="500" Width="500" WindowStartupLocation="CenterScreen">
+ 
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+        <TabControl Grid.Row="0">
+            <TabItem Header="CPU">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="12*"/>
+                        <ColumnDefinition Width="9*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="6*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <!--主機-->
+                    <GroupBox Header="主機" BorderBrush="DodgerBlue" Grid.Column="0"
+                              Margin="5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="11*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Margin="6">PLC機種</TextBlock>
+                                <TextBlock Margin="6">名稱</TextBlock>
+                                <TextBlock Margin="6">版本</TextBlock>
+                                <TextBlock Margin="6">通訊站號</TextBlock>
+                                <TextBlock Margin="6">MAC</TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <TextBox Margin="5" IsReadOnly="True" x:Name="DeviceType"></TextBox>
+                                <TextBox Margin="5" IsReadOnly="True" x:Name="DeviceName"></TextBox>
+                                <TextBox Margin="5" IsReadOnly="True" x:Name="Vision"></TextBox>
+                                <TextBox Margin="5" IsReadOnly="True" x:Name="StationNumber"></TextBox>
+                                <TextBox Margin="5" IsReadOnly="True" x:Name="MacAddress"></TextBox>
+                            </StackPanel>
+                        </Grid>
+                    </GroupBox>
+                    <!--掃描時間(ms)-->
+                    <GroupBox Header="掃描時間(ms)" BorderBrush="DodgerBlue" Grid.Column="1"
+                              Margin="5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="4*"/>
+                                <ColumnDefinition Width="6*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Margin="6">現行時間</TextBlock>
+                                <TextBlock Margin="6">最短時間</TextBlock>
+                                <TextBlock Margin="6">最長時間</TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <TextBox Margin="5" IsReadOnly="True" x:Name="CurrentTime"></TextBox>
+                                <TextBox Margin="5" IsReadOnly="True" x:Name="ShortestTime"></TextBox>
+                                <TextBox Margin="5" IsReadOnly="True" x:Name="LongestTime"></TextBox>
+                            </StackPanel>
+                        </Grid>
+                    </GroupBox>
+                    <!--程式-->
+                    <GroupBox Header="程式" BorderBrush="DodgerBlue" Grid.Row="1"
+                              Margin="5,5,5,25">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="9*"/>
+                                <ColumnDefinition Width="11*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" HorizontalAlignment="Left" Width="114">
+                                <TextBlock Margin="6">容量大小</TextBlock>
+                                <TextBlock Margin="6">鎖定狀態</TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1">
+                                <TextBox Margin="5" IsReadOnly="True" x:Name="ProgramSize"></TextBox>
+                                <TextBox Margin="5" IsReadOnly="True" x:Name="LockStatus"></TextBox>
+                            </StackPanel>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button Grid.Row="1"  Content = "Load" x:Name="LoadDeviceInfo"
+                HorizontalAlignment = "Left" Margin="15" Width="60">
+        </Button>
+        <Button Grid.Row="1"  Content = "Close" 
+                HorizontalAlignment = "Right" Margin="15" Width="60">
+        </Button>
+    </Grid>
+    
+  
+</Window>
